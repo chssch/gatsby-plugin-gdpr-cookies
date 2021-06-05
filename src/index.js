@@ -6,7 +6,7 @@ const {
 } = require('./services')
 
 exports.initializeAndTrack = (location) => {
-  console.log( window.gatsbyPluginGDPRCookiesOptions);
+
   const options = window.gatsbyPluginGDPRCookiesOptions
 
   if (location === undefined || location === null) {
