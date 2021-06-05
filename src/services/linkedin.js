@@ -3,7 +3,7 @@ const {
   getCookie
 } = require('../helper')
 
-// TODO: tag manager does track automatically when adding it to the dom
+// TODO: https://github.com/floriangaechter/gatsby-plugin-linkedin-insight/blob/master/src/gatsby-ssr.js
 
 exports.addLinkedIn = ({ trackingId, dataLayerName }, environmentParamStr) => {
   return new Promise((resolve, reject) => {
