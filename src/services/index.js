@@ -2,8 +2,10 @@ const {
   validGATrackingId,
   validGTMTrackingId,
   validFbPixelId,
+  validLinkedInId,
   getCookie
 } = require('../helper')
+
 
 const {
   addGoogleAnalytics,
@@ -22,6 +24,11 @@ const {
   initializeFacebookPixel,
   trackFacebookPixel
 } = require('./facebook')
+
+
+const {
+  addLinkedIn
+} = require('./linkedin')
 
 exports.initializeAndTrackGoogleAnalytics = (options, location) => {
   if (
@@ -65,6 +72,22 @@ exports.initializeAndTrackFacebookPixel = (options) => {
       if (status) {
         initializeFacebookPixel(options)
         trackFacebookPixel(options)
+      }
+    })
+  }
+}
+
+
+exports.initializeAndTrackLinkedIn = (options) => {
+  if (
+    getCookie(options.cookieName) === `true` &&
+    validLinkedInId(options)
+  ) {
+    
+
+    addLinkedIn(options).then((status) => {
+      if (status) {
+       
       }
     })
   }

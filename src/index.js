@@ -2,9 +2,11 @@ const {
   initializeAndTrackGoogleAnalytics,
   initializeAndTrackGoogleTagManager,
   initializeAndTrackFacebookPixel,
+  initializeAndTrackLinkedIn
 } = require('./services')
 
 exports.initializeAndTrack = (location) => {
+  console.log( window.gatsbyPluginGDPRCookiesOptions);
   const options = window.gatsbyPluginGDPRCookiesOptions
 
   if (location === undefined || location === null) {
@@ -13,5 +15,6 @@ exports.initializeAndTrack = (location) => {
     initializeAndTrackGoogleAnalytics(options.googleAnalytics, location)
     initializeAndTrackGoogleTagManager(options.googleTagManager, location)
     initializeAndTrackFacebookPixel(options.facebookPixel)
+    initializeAndTrackLinkedIn(options.linkedIn)
   }
 }
